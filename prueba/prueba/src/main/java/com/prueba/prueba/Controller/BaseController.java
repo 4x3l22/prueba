@@ -40,7 +40,7 @@ public abstract class BaseController<T extends BaseEntity> {
             T saveEntity = baseService.save(entity);
             return ResponseEntity.status(HttpStatus.CREATED).body(saveEntity);
         }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(entity);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(entity);
         }
     }
 

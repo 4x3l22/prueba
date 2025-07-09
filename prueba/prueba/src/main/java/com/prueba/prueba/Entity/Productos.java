@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "productos")
 public class Productos extends BaseEntity {
 
-    @Column(name = "tip_documento",nullable = false,length = 2)
-    private String tip_documento;
+    @Column(name = "tip_cuenta",nullable = false,length = 2)
+    private String tip_cuenta;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id", nullable = false)
@@ -26,8 +26,8 @@ public class Productos extends BaseEntity {
     private String exenta_gmf;
 
     //Getters
-    public String getTip_documento() {
-        return tip_documento;
+    public String getTip_cuenta() {
+        return tip_cuenta;
     }
     public Clientes getClientes() {
         return clientes;
@@ -46,8 +46,8 @@ public class Productos extends BaseEntity {
     }
 
     //Setters
-    public void setTip_documento(String tip_documento) {
-        this.tip_documento = tip_documento;
+    public void tip_cuenta(String tip_cuenta) {
+        this.tip_cuenta = tip_cuenta;
     }
     public void setClientes(Clientes clientes) {
         this.clientes = clientes;

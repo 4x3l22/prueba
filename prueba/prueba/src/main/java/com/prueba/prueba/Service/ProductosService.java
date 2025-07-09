@@ -11,4 +11,19 @@ public class ProductosService extends BaseService<Productos> implements IProduct
     protected ProductosService(IBaseRepository<Productos, Long> repository, AuditoriaService auditService) {
         super(repository, auditService);
     }
+
+    @Override
+    public Productos save(Productos productos) throws Exception{
+
+        if(!esCuentaValida(productos.getTip_cuenta())){
+            throw new Exception("El cuenta no es valida");
+        }
+        return super.save(productos);
+    }
+
+    private boolean esCuentaValida(String cuenta) {
+        if (cuenta == null) return false;
+        return cuenta.equalsIgnoreCase("corriente") || cuenta.equalsIgnoreCase("ahorros");
+    }
+
 }

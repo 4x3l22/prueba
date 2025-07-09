@@ -3,6 +3,8 @@ package com.prueba.prueba.Entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 
@@ -16,9 +18,13 @@ public class Clientes extends BaseEntity{
     @Column(name = "num_identificcion", length = 10, nullable = false)
     private int num_identificcion;
 
+    @NotBlank(message = "El nombre no puede estar vacio")
+    @Size(min = 3, message = "El nombre debe tener por lo menos tres caracteres")
     @Column(name = "nombres", length = 500, nullable = false)
     private String nombres;
 
+    @NotBlank(message = "El apellido no puede estar vacio")
+    @Size(min = 3, message = "El apellido debe tener por lo menos tres caracteres")
     @Column(name = "apellidos", length = 500, nullable = false)
     private String apellidos;
 

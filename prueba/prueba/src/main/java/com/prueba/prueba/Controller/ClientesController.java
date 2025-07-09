@@ -14,4 +14,6 @@ public class ClientesController extends BaseController<Clientes>{
     public ClientesController(ClientesService clientesService) {
         super(clientesService);
     }
+
+
 }
