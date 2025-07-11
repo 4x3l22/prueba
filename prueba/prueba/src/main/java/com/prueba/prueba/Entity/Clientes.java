@@ -10,13 +10,13 @@ import java.util.Date;
 
 @Entity
 @Table(name = "clientes")
-public class Clientes extends BaseEntity{
+public class Clientes extends BaseEntity {
 
     @Column(name = "tp_identificcion", length = 100, nullable = false)
-    private String tp_identificacion;
+    private String tpIdentificacion;
 
     @Column(name = "num_identificcion", length = 10, nullable = false)
-    private int num_identificcion;
+    private int numIdentificcion;
 
     @NotBlank(message = "El nombre no puede estar vacio")
     @Size(min = 3, message = "El nombre debe tener por lo menos tres caracteres")
@@ -28,18 +28,18 @@ public class Clientes extends BaseEntity{
     @Column(name = "apellidos", length = 500, nullable = false)
     private String apellidos;
 
-    @Column(name = "email",length = 100, nullable = false)
+    @Column(name = "email", length = 100, nullable = false)
     private String email;
 
     @Column(name = "fecha_nacimiento", nullable = false)
-    private Date fecha_nacimiento;
+    private Date fechaNacimiento;
 
     //Getters
-    public String getTp_identificacion() {
-        return tp_identificacion;
+    public String getTpIdentificacion() {
+        return tpIdentificacion;
     }
-    public int getNum_identificcion() {
-        return num_identificcion;
+    public int getNumIdentificcion() {
+        return numIdentificcion;
     }
     public String getNombres() {
         return nombres;
@@ -50,16 +50,16 @@ public class Clientes extends BaseEntity{
     public String getEmail() {
         return email;
     }
-    public Date getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     //Setters
-    public void setTp_identificacion(String tp_identificacion) {
-        this.tp_identificacion = tp_identificacion;
+    public void setTpIdentificacion(String tpIdentificacion) {
+        this.tpIdentificacion = tpIdentificacion;
     }
-    public void setNum_identificcion(int num_identificcion) {
-        this.num_identificcion = num_identificcion;
+    public void setNumIdentificcion(int numIdentificcion) {
+        this.numIdentificcion = numIdentificcion;
     }
     public void setNombres(String nombres) {
         this.nombres = nombres;
@@ -70,7 +70,7 @@ public class Clientes extends BaseEntity{
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 }

@@ -1,4 +1,4 @@
-package com.prueba.prueba.IRepository;
+package com.prueba.prueba.Repository;
 
 import com.prueba.prueba.Entity.BaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,10 +1,9 @@
 package com.prueba.prueba.Service;
 
 import com.prueba.prueba.Entity.BaseEntity;
-import com.prueba.prueba.IRepository.IBaseRepository;
+import com.prueba.prueba.Repository.IBaseRepository;
 import com.prueba.prueba.IService.IBaseService;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ public abstract class BaseService<T extends BaseEntity> implements IBaseService<
         List<T> resul = new ArrayList<>();
 
         for(T item: entities){
-            if(item.getFecha_eliminacion() == null){
+            if(item.getFechaEliminacion() == null){
                 resul.add(item);
             }
         }
@@ -44,7 +43,7 @@ public abstract class BaseService<T extends BaseEntity> implements IBaseService<
 
     @Override
     public T save(T entity) throws Exception{
-        if(entity.getFecha_creacion() == null){
+        if(entity.getFechaCreacion() == null){
             auditService.setAuditoriaOnCreate(entity);
         }else{
             auditService.setAuditoriaOnUpdate(entity);
@@ -60,9 +59,9 @@ public abstract class BaseService<T extends BaseEntity> implements IBaseService<
         }
         T objetoToUpdate = optionalT.get();
 
-        String[] ignoreProperties = { "id", "fecha_creacion", "fecha_eliminacion"};
+        String[] ignoreProperties = { "id", "fechaCreacion", "fechaEliminacion"};
         BeanUtils.copyProperties(entity, objetoToUpdate, ignoreProperties);
-        objetoToUpdate.setFecha_creacion(objetoToUpdate.getFecha_creacion());
+        objetoToUpdate.setFechaCreacion(objetoToUpdate.getFechaCreacion());
         auditService.setAuditoriaOnUpdate(objetoToUpdate);
         this.repository.save(objetoToUpdate);
     }

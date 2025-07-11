@@ -45,7 +45,7 @@ public abstract class BaseController<T extends BaseEntity> {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody T entity) {
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody T entity) throws Exception{
         try {
             baseService.update(id, entity);
             return ResponseEntity.ok(entity);

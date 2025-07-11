@@ -11,40 +11,40 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fecha_creacion",nullable = false)
-    private LocalDateTime fecha_creacion;
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDateTime fechaCreacion;
 
-    @Column(name = "fecha_modificacion",nullable = false)
-    private LocalDateTime fecha_modificacion;
+    @Column(name = "fecha_modificacion", nullable = false)
+    private LocalDateTime fechaModificacion;
 
-    @Column(name = "fecha_eliminacion",nullable = true)
-    private LocalDateTime fecha_eliminacion;
+    @Column(name = "fecha_eliminacion", nullable = true)
+    private LocalDateTime fechaEliminacion;
 
     //Getters
     public Long getId() {
         return id;
     }
-    public LocalDateTime getFecha_creacion() {
-        return fecha_creacion;
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
     }
-    public LocalDateTime getFecha_modificacion() {
-        return fecha_modificacion;
+    public LocalDateTime getFechaModificacion() {
+        return fechaModificacion;
     }
-    public LocalDateTime getFecha_eliminacion() {
-        return fecha_eliminacion;
+    public LocalDateTime getFechaEliminacion() {
+        return fechaEliminacion;
     }
 
     //Setters
     public void setId(Long id) {
         this.id = id;
     }
-    public void setFecha_creacion(LocalDateTime fecha_creacion) {
-        this.fecha_creacion = fecha_creacion;
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
-    public void setFecha_modificacion(LocalDateTime fecha_modificacion) {
-        this.fecha_modificacion = fecha_modificacion;
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
     }
-    public void setFecha_eliminacion(LocalDateTime fecha_eliminacion) {
-        this.fecha_eliminacion = fecha_eliminacion;
+    public void setFechaEliminacion(LocalDateTime fechaEliminacion) {
+        this.fechaEliminacion = fechaEliminacion;
     }
 }

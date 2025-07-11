@@ -6,34 +6,34 @@ import jakarta.persistence.*;
 @Table(name = "productos")
 public class Productos extends BaseEntity {
 
-    @Column(name = "tip_cuenta",nullable = false,length = 2)
-    private String tip_cuenta;
+    @Column(name = "tip_cuenta", nullable = false, length = 100)
+    private String tipCuenta;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id", nullable = false)
     private Clientes clientes;
 
-    @Column(name = "num_cuenta", nullable = false, length = 10)
-    private int num_cuenta;
+    @Column(name = "num_cuenta", nullable = false, length = 10, unique = true)
+    private long numCuenta;
 
     @Column(name = "estado", nullable = false)
     private String estado;
 
-    @Column(name = "saldo",nullable = false)
+    @Column(name = "saldo", nullable = false)
     private double saldo;
 
     @Column(name = "exenta_gmf", nullable = false)
-    private String exenta_gmf;
+    private String exentaGmf;
 
     //Getters
-    public String getTip_cuenta() {
-        return tip_cuenta;
+    public String getTipCuenta() {
+        return tipCuenta;
     }
     public Clientes getClientes() {
         return clientes;
     }
-    public int getNum_cuenta() {
-        return num_cuenta;
+    public long getNumCuenta() {
+        return numCuenta;
     }
     public String getEstado() {
         return estado;
@@ -41,19 +41,19 @@ public class Productos extends BaseEntity {
     public double getSaldo() {
         return saldo;
     }
-    public String getExenta_gmf() {
-        return exenta_gmf;
+    public String getExentaGmf() {
+        return exentaGmf;
     }
 
     //Setters
-    public void tip_cuenta(String tip_cuenta) {
-        this.tip_cuenta = tip_cuenta;
+    public void setTipCuenta(String tipCuenta) {
+        this.tipCuenta = tipCuenta;
     }
     public void setClientes(Clientes clientes) {
         this.clientes = clientes;
     }
-    public void setNum_cuenta(int num_cuenta) {
-        this.num_cuenta = num_cuenta;
+    public void setNumCuenta(long numCuenta) {
+        this.numCuenta = numCuenta;
     }
     public void setEstado(String estado) {
         this.estado = estado;
@@ -61,7 +61,7 @@ public class Productos extends BaseEntity {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    public void setExenta_gmf(String exenta_gmf) {
-        this.exenta_gmf = exenta_gmf;
+    public void setExentaGmf(String exentaGmf) {
+        this.exentaGmf = exentaGmf;
     }
 }

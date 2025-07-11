@@ -12,18 +12,18 @@ public class AuditoriaService {
 
     public void setAuditoriaOnCreate(BaseEntity entity){
         ZonedDateTime fechaEnBogota = ZonedDateTime.now(ZoneId.of("America/Bogota"));
-        entity.setFecha_creacion(fechaEnBogota.toLocalDateTime());
-        entity.setFecha_modificacion(fechaEnBogota.toLocalDateTime());
-        entity.setFecha_eliminacion(null);
+        entity.setFechaCreacion(fechaEnBogota.toLocalDateTime());
+        entity.setFechaModificacion(fechaEnBogota.toLocalDateTime());
+        entity.setFechaEliminacion(null);
     }
 
     public void setAuditoriaOnUpdate(BaseEntity entity){
         ZonedDateTime fechaEnBogota = ZonedDateTime.now(ZoneId.of("America/Bogota"));
-        entity.setFecha_creacion(fechaEnBogota.toLocalDateTime());
+        entity.setFechaCreacion(fechaEnBogota.toLocalDateTime());
     }
 
     public void setAuditoriaOnDelete(BaseEntity entity){
         ZonedDateTime fechaEnBogota = ZonedDateTime.now(ZoneId.of("America/Bogota"));
-        entity.setFecha_eliminacion(fechaEnBogota.toLocalDateTime());
+        entity.setFechaEliminacion(fechaEnBogota.toLocalDateTime());
     }
 }

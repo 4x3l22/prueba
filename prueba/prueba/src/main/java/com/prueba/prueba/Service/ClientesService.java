@@ -1,7 +1,7 @@
 package com.prueba.prueba.Service;
 
 import com.prueba.prueba.Entity.Clientes;
-import com.prueba.prueba.IRepository.IBaseRepository;
+import com.prueba.prueba.Repository.IBaseRepository;
 import com.prueba.prueba.IService.IClientesService;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class ClientesService extends BaseService<Clientes> implements IClientesS
 
     @Override
     public Clientes save(Clientes cliente) throws Exception {
-        if (!esMayorDeEdad(cliente.getFecha_nacimiento())) {
+        if (!esMayorDeEdad(cliente.getFechaNacimiento())) {
             throw new Exception("El cliente no puede ser creado porque es menor de edad.");
         }
 
@@ -50,4 +50,6 @@ public class ClientesService extends BaseService<Clientes> implements IClientesS
         if (correo == null) return false;
         return correo.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
     }
+
+
 }
